@@ -1,13 +1,18 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
+import AppBackground from './components/AppBackground.vue';
 </script>
 
 <template>
 	<header>
 		<nav>
 			<RouterLink to="/">Home</RouterLink>
+			<RouterLink to="/projects">Projects</RouterLink>
+			<RouterLink to="/projects/test">Test</RouterLink>
 		</nav>
 	</header>
+
+	<AppBackground />
 
 	<RouterView />
 </template>
