@@ -1,11 +1,9 @@
 <script setup>
-import { useRoute } from "vue-router";
-
-const route = useRoute();
+import ProjectCard from '@/components/ProjectCard.vue';
 </script>
 
 <template>
-	<main>
-		<p>{{ route.params.project }}</p>
-	</main>
+	<button>Prev</button>
+	<ProjectCard />
+	<button>Next</button>
 </template>

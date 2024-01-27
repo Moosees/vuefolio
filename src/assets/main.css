@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: normal;
+	font: inherit;
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: system-ui, sans-serif;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	line-height: 1.2;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+	height: auto;
+	font-style: italic;
+}
+
+#app {
+	height: 100svh;
+	display: flex;
+	flex-direction: column;
+}

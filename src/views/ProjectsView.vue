@@ -1,5 +1,8 @@
+<script setup>
+import { RouterLink } from 'vue-router';
+</script>
+
 <template>
-	<main>
-		<p>Projects</p>
-	</main>
+	<RouterLink to="/projects/test1">Test1</RouterLink>
+	<RouterLink to="/projects/test2">Test2</RouterLink>
 </template>
