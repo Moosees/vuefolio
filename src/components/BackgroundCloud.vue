@@ -4,7 +4,6 @@ const props = defineProps({
 	duration: String,
 	offsetY: Number
 });
-console.log(typeof props.offsetY);
 </script>
 
 <template>
