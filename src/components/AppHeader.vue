@@ -5,8 +5,15 @@ import { RouterLink } from "vue-router";
 <template>
 	<header>
 		<nav>
-			<RouterLink to="/">Home</RouterLink>
-			<RouterLink to="/projects">Projects</RouterLink>
+			<div class="group">
+				<RouterLink to="/">Home</RouterLink>
+				<RouterLink to="/projects">Projects</RouterLink>
+			</div>
+			<div class="group">
+				<a href="#">Email</a>
+				<a href="#">Github</a>
+				<a href="#">LinkedIn</a>
+			</div>
 		</nav>
 	</header>
 </template>
@@ -14,29 +21,24 @@ import { RouterLink } from "vue-router";
 <style scoped>
 header {
 	box-shadow: 0 0 0 5px rgb(0 0 0 / 0.2);
-	padding: 1em;
+	padding: 1em 4em;
 }
 
 nav {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 nav a.router-link-exact-active {
-	color: var(--color-text);
+	opacity: 0.5;
 }
 
 nav a.router-link-exact-active:hover {
-	background-color: transparent;
+	opacity: 0.75;
 }
 
-nav a {
-	display: inline-block;
-	padding: 0 1rem;
-	border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-	border: 0;
+.group {
+	display: flex;
+	gap: 1em;
 }
 </style>
