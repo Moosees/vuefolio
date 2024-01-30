@@ -2,8 +2,8 @@
 import { onMounted } from 'vue';
 // import { useWeatherStore } from "@/stores/weather.js";
 
-import BackgroundCloud from './BackgroundCloud.vue';
-import BackgroundLayer from './BackgroundLayer.vue';
+import BackgroundCloud from '@/components/BackgroundCloud.vue';
+import BackgroundLayer from '@/components/BackgroundLayer.vue';
 
 // const weatherStore = useWeatherStore();
 
@@ -18,7 +18,7 @@ onMounted(async () => {
 </script>
 
 <template>
-	<div class="container">
+	<div class="background">
 		<BackgroundLayer>
 			<BackgroundCloud delay="1s" duration="20s" :offset-y="50" />
 			<BackgroundCloud delay="7s" duration="30s" :offset-y="30" />
@@ -30,7 +30,7 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-.container {
+.background {
 	position: absolute;
 	z-index: -1;
 	inset: 0;
