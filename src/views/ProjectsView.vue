@@ -1,8 +1,21 @@
 <script setup>
-import { RouterLink } from 'vue-router';
+import ProjectCard from '@/components/ProjectCard.vue';
 </script>
 
 <template>
-	<RouterLink to="/projects/test1">Test1</RouterLink>
-	<RouterLink to="/projects/test2">Test2</RouterLink>
+	<div class="projects-wrapper">
+		<ProjectCard name="Test1" thumbnail="#" repo-url="#" live-url="#" details-url="/projects/test1" />
+		<ProjectCard name="Test2" thumbnail="#" repo-url="#" live-url="#" details-url="/projects/test2" />
+	</div>
 </template>
+
+<style scoped>
+.projects-wrapper {
+	overflow: auto hidden;
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	gap: 2em;
+}
+</style>
