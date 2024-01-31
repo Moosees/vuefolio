@@ -6,8 +6,7 @@
 
 <style scoped>
 .layer {
-	position: relative;
-	height: 33%;
-	background-color: beige;
+	position: absolute;
+	inset: 0;
 }
 </style>

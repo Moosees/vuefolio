@@ -4,6 +4,7 @@ import { onMounted } from 'vue';
 
 import BackgroundCloud from '@/components/BackgroundCloud.vue';
 import BackgroundLayer from '@/components/BackgroundLayer.vue';
+import BackgroundForest from './BackgroundForest.vue';
 
 // const weatherStore = useWeatherStore();
 
@@ -24,8 +25,9 @@ onMounted(async () => {
 			<BackgroundCloud delay="7s" duration="30s" :offset-y="30" />
 			<BackgroundCloud delay="12s" duration="15s" :offset-y="60" />
 		</BackgroundLayer>
-		<BackgroundLayer />
-		<BackgroundLayer />
+		<BackgroundLayer>
+			<BackgroundForest />
+		</BackgroundLayer>
 	</div>
 </template>
 
