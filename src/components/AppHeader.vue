@@ -20,8 +20,8 @@ import { RouterLink } from "vue-router";
 
 <style scoped>
 header {
-	box-shadow: 0 0 0 5px rgb(0 0 0 / 0.2);
-	padding: 1em 4em;
+	padding: 1em 2em;
+	background-color: azure;
 }
 
 nav {

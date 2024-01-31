@@ -1,6 +1,6 @@
 #app {
 	height: 100svh;
 	display: flex;
-	flex-direction: column;
 	overflow: hidden;
+	position: relative;
 }
