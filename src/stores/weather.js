@@ -22,9 +22,9 @@ export const useWeatherStore = defineStore('weather', () => {
 		windDirectionFromEast.value = newData.current.wind_direction_10m < 180;
 	};
 
-	function toggleDayNight() {
+	function toggleDay() {
 		isDay.value = !isDay.value;
 	};
 
-	return { temperature, isDay, rain, snowFall, snowDepth, cloudCover, windSpeed, windDirectionFromEast, setWeatherData, toggleDayNight };
+	return { temperature, isDay, rain, snowFall, snowDepth, cloudCover, windSpeed, windDirectionFromEast, setWeatherData, toggleDay };
 });
