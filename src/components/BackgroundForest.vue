@@ -1,5 +1,5 @@
 <template>
-	<img src="@/assets/img/forest.png" />
+	<img src="@/assets/img/forest.png" width="2688" height="1536" />
 </template>
 
 <style scoped>

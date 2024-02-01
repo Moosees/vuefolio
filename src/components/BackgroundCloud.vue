@@ -24,20 +24,20 @@ const duration = computed(() => {
 
 <template>
 	<img :src="src" class="cloud"
-		:style="{ '--delay': props.delay || '1s', '--duration': duration, top: props.offsetY + '%' }" />
+		:style="{ '--delay': props.delay || '1s', '--duration': duration, top: props.offsetY + '%' }" width="500" height="200" />
 </template>
 
 <style scoped>
 .cloud {
 	position: absolute;
-	left: calc(100% + 100px);
+	left: 100%;
 	animation: var(--duration) linear var(--delay) move infinite,
 		5s ease-in-out sway infinite alternate;
 }
 
 @keyframes move {
 	to {
-		left: calc(-100% - 100px);
+		left: -500px;
 	}
 }
 
