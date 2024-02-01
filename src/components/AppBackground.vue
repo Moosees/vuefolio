@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
 import { useWeatherStore } from "@/stores/weather.js";
 
 import BackgroundCloud from '@/components/BackgroundCloud.vue';
@@ -8,8 +8,7 @@ import BackgroundForest from './BackgroundForest.vue';
 import { storeToRefs } from 'pinia';
 
 const weatherStore = useWeatherStore();
-
-const { isDay } = storeToRefs(weatherStore);
+const { isDay, cloudCover } = storeToRefs(weatherStore);
 
 onMounted(async () => {
 	// const url = 'https://api.open-meteo.com/v1/forecast?latitude=60.0667&longitude=16.2167&current=temperature_2m,is_day,rain,snowfall,cloud_cover,wind_speed_10m,wind_direction_10m&hourly=snow_depth&wind_speed_unit=ms&timezone=auto&forecast_days=1';
@@ -19,16 +18,21 @@ onMounted(async () => {
 
 	// weatherStore.setWeatherData(data);
 });
+
+// create array with data needed to create cloud components
+const clouds = computed(() => {
+	const ary = [];
+	for (let i = 0; i < cloudCover.value; ++i) {
+		ary.push({ key: i, delay: `${i * 5}s`, offsetY: Math.floor(Math.random() * 40) + 5 });
+	}
+	return ary;
+});
 </script>
 
 <template>
 	<div class="background" :class="{ 'day-time': isDay }">
 		<BackgroundLayer>
-			<BackgroundCloud delay="1s" :offset-y="50" />
-			<BackgroundCloud delay="4s" :offset-y="30" />
-			<BackgroundCloud delay="6s" :offset-y="20" />
-			<BackgroundCloud delay="7s" :offset-y="10" />
-			<BackgroundCloud delay="10s" :offset-y="40" />
+			<BackgroundCloud v-for="cloud in clouds" :key="cloud.key" :delay="cloud.delay" :offset-y="cloud.offsetY" />
 		</BackgroundLayer>
 		<BackgroundLayer>
 			<BackgroundForest />
