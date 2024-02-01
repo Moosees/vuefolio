@@ -24,9 +24,11 @@ onMounted(async () => {
 <template>
 	<div class="background" :class="{ 'day-time': isDay }">
 		<BackgroundLayer>
-			<BackgroundCloud delay="1s" duration="20s" :offset-y="50" />
-			<BackgroundCloud delay="7s" duration="30s" :offset-y="30" />
-			<BackgroundCloud delay="12s" duration="15s" :offset-y="60" />
+			<BackgroundCloud fileName="cloud1.png" delay="1s" duration="20s" :offset-y="50" />
+			<BackgroundCloud fileName="cloud2.png" delay="4s" duration="30s" :offset-y="30" />
+			<BackgroundCloud fileName="cloud3.png" delay="6s" duration="25s" :offset-y="20" />
+			<BackgroundCloud fileName="cloud4.png" delay="7s" duration="35s" :offset-y="10" />
+			<BackgroundCloud fileName="cloud5.png" delay="10s" duration="40" :offset-y="40" />
 		</BackgroundLayer>
 		<BackgroundLayer>
 			<BackgroundForest />
