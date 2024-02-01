@@ -18,7 +18,8 @@ export const useWeatherStore = defineStore('weather', () => {
 		snowFall.value = newData.current.snowfall;
 		snowDepth.value = newData.hourly.snow_depth[newData.hourly.snow_depth.length - 1] * 100;
 		cloudCover.value = newData.current.cloud_cover;
-		windSpeed.value = Math.floor(newData.current.wind_speed_10m);
+		const windFloored = Math.floor(newData.current.wind_speed_10m);
+		windSpeed.value = windFloored < 25 ? windFloored : 25;
 		windDirectionFromEast.value = newData.current.wind_direction_10m < 180;
 	};
 
