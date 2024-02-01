@@ -21,9 +21,10 @@ onMounted(async () => {
 
 // create array with data needed to create cloud components
 const clouds = computed(() => {
+	const delays = [0, 20, 40, 60, 80, 10, 30, 50, 70, 90];
 	const ary = [];
 	for (let i = 0; i < cloudCover.value; ++i) {
-		ary.push({ key: i, delay: `${i * 5}s`, offsetY: Math.floor(Math.random() * 40) + 5 });
+		ary.push({ key: i, delay: `${delays[i]}s`, offsetY: Math.floor(Math.random() * 40) + 5 });
 	}
 	return ary;
 });
