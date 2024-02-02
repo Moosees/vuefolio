@@ -1,10 +1,19 @@
 # TODO list for vuefolio
 
-* Styling for home view
-* Text for home view
-* Interactivity for home
+## Next todo
+
 * Styling for projects view
 * Styling for details view
+
+## HomeView
+
+* Nicer and more contrasted home view
+* Better text for home
+* Picture for home?
+
+## Other future plans
+
+* Socials icons?
 * Screenshot component (with routing?) for thumbnail to full size
 * Fade out clouds before demounting component
 * Combine project list data and project details data
