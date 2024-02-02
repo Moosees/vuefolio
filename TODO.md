@@ -2,7 +2,6 @@
 
 ## Next todo
 
-* Styling for projects view
 * Styling for details view
 
 ## HomeView
@@ -11,12 +10,18 @@
 * Better text for home
 * Picture for home?
 
+## Background
+
+* Fade out clouds before demounting component
+* Wind direction reverse or not cloud animation
+* More layers to background, trees in front of AppContent?
+* Prevent changing wind speed from making cloud animations skippy
+* Snow and other things in weather store applied to background
+
 ## Other future plans
 
 * Socials icons?
 * Screenshot component (with routing?) for thumbnail to full size
-* Fade out clouds before demounting component
 * Combine project list data and project details data
 * Add thumbnails and more screenshots to projects
-* Prevent changing wind speed from making cloud animations skippy
-* Snow and other things in weather store applied to background
+* Better styling for projects view and ProjectCard

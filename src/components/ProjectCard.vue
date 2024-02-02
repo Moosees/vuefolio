@@ -15,10 +15,10 @@ const props = defineProps({
 	<article class="project-card">
 		<!-- <img :src="props.thumbnail" :alt="props.name + ' preview image'"> -->
 		<h2>{{ props.name }}</h2>
-		<h3>{{ props.subHeading }}</h3>
+		<p>{{ props.subHeading }}</p>
 		<div class="project-card__buttons">
 			<a :href="props.repoUrl" target="_blank" rel="noopener noreferrer">Code</a>
-			<a :href="props.liveUrl" target="_blank" rel="noopener noreferrer">Live</a>
+			<a :href="props.liveUrl" target="_blank" rel="noopener noreferrer">Visit</a>
 			<RouterLink :to="props.detailsUrl">Details</RouterLink>
 		</div>
 	</article>
@@ -32,11 +32,18 @@ const props = defineProps({
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	gap: 1em;
+	padding: 1em;
+	width: 40%;
+	height: 40%;
 }
 
+h2 {
+	font-size: 1.4em;
+}
 .project-card__buttons {
 	display: flex;
-	gap: 5px;
+	gap: 0.5em;
 }
 </style>
