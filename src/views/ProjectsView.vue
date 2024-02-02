@@ -4,8 +4,11 @@ import ProjectCard from '@/components/ProjectCard.vue';
 
 <template>
 	<div class="projects-wrapper">
-		<ProjectCard name="Test1" thumbnail="#" repo-url="#" live-url="#" details-url="/projects/test1" />
-		<ProjectCard name="Test2" thumbnail="#" repo-url="#" live-url="#" details-url="/projects/test2" />
+		<ProjectCard name="Ding and Tones" sub-heading="Scales and sheet music for drums"
+			repo-url="https://github.com/Moosees/ding-and-tones" live-url="https://www.dingandtones.com"
+			details-url="/projects/ding" />
+		<ProjectCard name="Memory" sub-heading="The classic game (with cats)" repo-url="https://github.com/Moosees/Memory"
+			live-url="https://moosees.github.io/Memory/" details-url="/projects/memory" />
 	</div>
 </template>
 

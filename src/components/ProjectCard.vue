@@ -3,7 +3,8 @@ import { RouterLink } from "vue-router";
 
 const props = defineProps({
 	name: String,
-	thumbnail: String,
+	subHeading: String,
+	// thumbnail: String,
 	repoUrl: String,
 	liveUrl: String,
 	detailsUrl: String
@@ -12,10 +13,12 @@ const props = defineProps({
 
 <template>
 	<article class="project-card">
-		<img :src="props.thumbnail" :alt="props.name + ' preview image'">
+		<!-- <img :src="props.thumbnail" :alt="props.name + ' preview image'"> -->
 		<h2>{{ props.name }}</h2>
+		<h3>{{ props.subHeading }}</h3>
 		<div class="project-card__buttons">
-			<a :href="props.repoUrl">Code</a><a :href="props.liveUrl">Live</a>
+			<a :href="props.repoUrl" target="_blank" rel="noopener noreferrer">Code</a>
+			<a :href="props.liveUrl" target="_blank" rel="noopener noreferrer">Live</a>
 			<RouterLink :to="props.detailsUrl">Details</RouterLink>
 		</div>
 	</article>
