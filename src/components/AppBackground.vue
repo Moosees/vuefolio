@@ -31,7 +31,7 @@ const clouds = computed(() => {
 </script>
 
 <template>
-	<div class="background" :class="{ 'day-time': isDay }">
+	<div class="background" :class="{ 'background--day': isDay }">
 		<BackgroundLayer>
 			<BackgroundCloud v-for="cloud in clouds" :key="cloud.key" :delay="cloud.delay" :offset-y="cloud.offsetY" />
 		</BackgroundLayer>
@@ -53,7 +53,7 @@ const clouds = computed(() => {
 	background-size: 100% 200%;
 }
 
-.day-time {
+.background--day {
 	filter: grayscale(0);
 	background-position: 0 100%;
 }

@@ -13,7 +13,7 @@ const imgPath = `../assets/img/cloud${Math.floor(Math.random() * 5 + 1)}.png`;
 const src = ref(new URL(imgPath, import.meta.url).href);
 
 const weatherStore = useWeatherStore();
-const { windSpeed } = storeToRefs(weatherStore);
+const { isDay, windSpeed } = storeToRefs(weatherStore);
 
 // wind speed controls duration of cloud animation
 const duration = computed(() => {
@@ -23,16 +23,24 @@ const duration = computed(() => {
 </script>
 
 <template>
-	<img :src="src" class="cloud"
-		:style="{ '--delay': props.delay || '1s', '--duration': duration, top: props.offsetY + '%' }" width="500" height="200" />
+	<img :src="src" class="cloud" :class="{ 'cloud--day': isDay }"
+		:style="{ '--delay': props.delay || '1s', '--duration': duration, top: props.offsetY + '%' }" width="500"
+		height="200" />
 </template>
 
 <style scoped>
 .cloud {
 	position: absolute;
 	left: 100%;
+	filter: brightness(0.1);
+	transition: filter 2.5s ease;
 	animation: var(--duration) linear var(--delay) move infinite,
 		5s ease-in-out sway infinite alternate;
+}
+
+.cloud--day {
+	filter: none;
+	transition: filter 1.5s ease;
 }
 
 @keyframes move {
