@@ -20,10 +20,40 @@ const projectExists = computed(() => !!projects[route.params.project]);
 </script>
 
 <template>
-	<p v-if="!projectExists">This project does not exist... yet.</p>
-	<template v-else>
-		<h2>{{ projects[route.params.project].name }}</h2>
-		<img :src="projects[route.params.project].img" alt="Project screenshot" />
-		<p>{{ projects[route.params.project].description }}</p>
-	</template>
+	<div class="details-wrapper">
+		<p v-if="!projectExists">This project does not exist... yet.</p>
+		<template v-else>
+			<h2>{{ projects[route.params.project].name }}</h2>
+			<p>{{ projects[route.params.project].description }}</p>
+			<div class="img-wrapper">
+				<img :src="projects[route.params.project].img" alt="Project screenshot" width="2200" height="1158" />
+			</div>
+		</template>
+	</div>
 </template>
+
+<style scoped>
+.details-wrapper {
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h2 {
+	font-size: 1.6em;
+	margin-bottom: 1em;
+}
+
+p {
+	font-size: 1.1em;
+	max-width: 60ch;
+	margin-bottom: 1em;
+}
+
+.img-wrapper {
+	border: 1px solid #000;
+	border-radius: 20px;
+	overflow: hidden auto;
+}
+</style>

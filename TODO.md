@@ -1,9 +1,5 @@
 # TODO list for vuefolio
 
-## Next todo
-
-* Styling for details view
-
 ## HomeView
 
 * Nicer and more contrasted home view
@@ -25,3 +21,6 @@
 * Combine project list data and project details data
 * Add thumbnails and more screenshots to projects
 * Better styling for projects view and ProjectCard
+* Better styling for details view
+* links in details view
+* back button in details?
