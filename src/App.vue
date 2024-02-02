@@ -21,8 +21,8 @@ main {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	max-width: 60em;
-	max-height: 30em;
+	max-width: 50em;
+	max-height: 40em;
 	margin: 4em auto;
 	border-radius: 10px;
 	overflow: hidden;
