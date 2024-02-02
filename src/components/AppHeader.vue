@@ -20,8 +20,8 @@ import { RouterLink } from "vue-router";
 
 <style scoped>
 header {
-	padding: 1em 2em;
-	background-color: azure;
+	padding: 1em;
+	background-color: rgb(41, 53, 70);
 }
 
 nav {
@@ -29,12 +29,19 @@ nav {
 	justify-content: space-between;
 }
 
-nav a.router-link-exact-active {
-	opacity: 0.5;
+nav a {
+	color: #fefefe;
+	font-size: 1.2em;
+	text-decoration: underline currentColor 3px;
 }
 
-nav a.router-link-exact-active:hover {
-	opacity: 0.75;
+nav a:not(.router-link-exact-active):hover {
+	text-decoration-color:forestgreen;
+}
+
+nav a.router-link-exact-active {
+	cursor: default;
+	opacity: 0.5;
 }
 
 .group {

@@ -7,8 +7,8 @@
 <style scoped>
 section {
 	flex: 1;
-	opacity: 0.9;
-	background-color: rgb(145, 228, 145);
+	opacity: 0.95;
+	background-color: rgb(130 177, 199);
 	display: flex;
 }
 </style>
