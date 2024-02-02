@@ -1,11 +1,29 @@
 <script setup>
+import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
+
+const projects = {
+	ding: {
+		name: 'Ding and Tones',
+		img: new URL('../assets/img/ding.png', import.meta.url).href,
+		description: "Started out as an app to compare musical scales, then grew into into a multi use app with a focus on making printable tablature for melodic drums. Built with MERN stack (MongoDb, Express, React, Node). It's why and how I started learning web development."
+	},
+	memory: {
+		name: 'Memory (and cats)!!!',
+		img: new URL('../assets/img/memory.png', import.meta.url).href, description: "Group project in a Javascript course at the web developer program I'm currently enrolled in."
+	}
+};
+
+const projectExists = computed(() => !!projects[route.params.project]);
 </script>
 
 <template>
-	<button>Prev</button>
-	<p>{{ route.params.project }}</p>
-	<button>Next</button>
+	<p v-if="!projectExists">This project does not exist... yet.</p>
+	<template v-else>
+		<h2>{{ projects[route.params.project].name }}</h2>
+		<img :src="projects[route.params.project].img" alt="Project screenshot" />
+		<p>{{ projects[route.params.project].description }}</p>
+	</template>
 </template>
