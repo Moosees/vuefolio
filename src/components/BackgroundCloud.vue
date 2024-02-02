@@ -5,11 +5,13 @@ import { storeToRefs } from 'pinia';
 
 const props = defineProps({
 	delay: String,
-	offsetY: Number
+	durationVariance: Number,
+	offsetY: Number,
+	variant: Number
 });
 
 // Vite shenanigans, might be easier to put images in public folder instead
-const imgPath = `../assets/img/cloud${Math.floor(Math.random() * 5 + 1)}.png`;
+const imgPath = `../assets/img/cloud${props.variant}.png`;
 const src = ref(new URL(imgPath, import.meta.url).href);
 
 const weatherStore = useWeatherStore();
@@ -17,8 +19,7 @@ const { isDay, windSpeed } = storeToRefs(weatherStore);
 
 // wind speed controls duration of cloud animation
 const duration = computed(() => {
-	const variance = Math.floor(Math.random() * 7) - 3;
-	return `${45 - windSpeed.value + variance}s`;
+	return `${45 - windSpeed.value + props.durationVariance}s`;
 });
 </script>
 

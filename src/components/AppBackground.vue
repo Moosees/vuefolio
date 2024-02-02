@@ -20,20 +20,27 @@ onMounted(async () => {
 });
 
 // create array with data needed to create cloud components
+const cloudDelays = [0, 20, 40, 60, 80, 10, 30, 50, 70, 90];
+const allClouds = [...Array(10)].map((_x, i) => {
+	return {
+		key: i,
+		delay: `${cloudDelays[i]}s`,
+		durationVariance: Math.floor(Math.random() * 7) - 3,
+		offsetY: Math.floor(Math.random() * 40) + 5,
+		variant: Math.floor(Math.random() * 5 + 1)
+	};
+});
+// keep the random stuff above from being reactive so they don't change
 const clouds = computed(() => {
-	const delays = [0, 20, 40, 60, 80, 10, 30, 50, 70, 90];
-	const ary = [];
-	for (let i = 0; i < cloudCover.value; ++i) {
-		ary.push({ key: i, delay: `${delays[i]}s`, offsetY: Math.floor(Math.random() * 40) + 5 });
-	}
-	return ary;
+	return allClouds.slice(0, cloudCover.value);
 });
 </script>
 
 <template>
 	<div class="background" :class="{ 'background--day': isDay }">
 		<BackgroundLayer>
-			<BackgroundCloud v-for="cloud in clouds" :key="cloud.key" :delay="cloud.delay" :offset-y="cloud.offsetY" />
+			<BackgroundCloud v-for="cloud in clouds" :key="cloud.key" :delay="cloud.delay"
+				:duration-variance="cloud.durationVariance" :offset-y="cloud.offsetY" :variant="cloud.variant" />
 		</BackgroundLayer>
 		<BackgroundLayer>
 			<BackgroundForest />
@@ -48,6 +55,7 @@ const clouds = computed(() => {
 	inset: 0;
 	overflow: hidden;
 	filter: grayscale(90%);
+	/* background-image is not animatable so we animate position instead */
 	transition: filter 1.5s ease-in-out, background-position 1.5s ease-in-out;
 	background-image: linear-gradient(to top, #c9adf3, #98cfe7 25%, #94e5fb 50%, #251505 75%, #150500 100%);
 	background-size: 100% 200%;
