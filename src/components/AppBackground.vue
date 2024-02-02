@@ -48,10 +48,13 @@ const clouds = computed(() => {
 	inset: 0;
 	overflow: hidden;
 	filter: grayscale(90%);
-	transition: filter 3s ease-in-out;
+	transition: filter 1.5s ease-in-out, background-position 1.5s ease-in-out;
+	background-image: linear-gradient(to top, #c9adf3, #98cfe7 25%, #94e5fb 50%, #251505 75%, #150500 100%);
+	background-size: 100% 200%;
 }
 
 .day-time {
 	filter: grayscale(0);
+	background-position: 0 100%;
 }
 </style>
